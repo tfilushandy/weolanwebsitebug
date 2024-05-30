@@ -14,9 +14,6 @@
             <a class="nav-link" href="{{ URL::to('product') }}"  style="color: white; animation: colorChange 20s infinite;">Product</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{ URL::to('contact') }}"  style="color: white; animation: colorChange 22s infinite;">Contact</a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="{{ URL::to('about') }}"  style="color: white; animation: colorChange 10s infinite;">About</a>
           </li>
           <form action="/product" method="GET">

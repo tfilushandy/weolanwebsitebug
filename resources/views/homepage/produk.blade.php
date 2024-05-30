@@ -94,3 +94,19 @@
 </div>
 </div>
 @endsection
+
+<style>
+  /* CSS untuk latar belakang */
+    body {
+    background-image: url('/images/bgmain.png'); /* Replace with the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensure the background remains fixed when scrolling */
+
+  }
+
+  .card {
+    background: linear-gradient(to right, #3354e7, slategray); /* Background gradient */
+  }
+
+</style>

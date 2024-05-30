@@ -3,11 +3,12 @@
 
 <style>
   /* CSS untuk latar belakang */
-  body {
-    background-image: url('/path/to/your/image.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+    body {
+    background-image: url('/images/bgmain.png'); /* Replace with the path to your background image */
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Memastikan latar belakang tetap saat menggulir halaman */
+    background-attachment: fixed; /* Ensure the background remains fixed when scrolling */
+
   }
 </style>
 

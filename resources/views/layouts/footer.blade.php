@@ -80,6 +80,7 @@
 }
 
 
+
 .text-white {
     color: white;
 }
@@ -134,4 +135,15 @@
     margin-top:20px;
 }
 
+
+body {;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style footer content */
+body {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
 </style>
