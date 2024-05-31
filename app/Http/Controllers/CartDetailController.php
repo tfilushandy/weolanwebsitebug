@@ -119,25 +119,24 @@ class CartDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $itemdetail = CartDetail::findOrFail($id);
-        $param = $request->param;
+        $detail = CartDetail::findOrFail($id);
         
-        if ($param == 'tambah') {
-            // update detail cart
-            $qty = 1;
-            $itemdetail->updatedetail($itemdetail, $qty, $itemdetail->harga, $itemdetail->diskon);
-            // update total cart
-            $itemdetail->cart->updatetotal($itemdetail->cart, ($itemdetail->harga - $itemdetail->diskon));
-            return back()->with('success', 'Item successfully updated');
+        if ($request->param == 'kurang') {
+            $detail->qty -= 1;
+        } elseif ($request->param == 'tambah') {
+            $detail->qty += 1;
         }
-        if ($param == 'kurang') {
-            // update detail cart
-            $qty = 1;
-            $itemdetail->updatedetail($itemdetail, '-'.$qty, $itemdetail->harga, $itemdetail->diskon);
-            // update total cart
-            $itemdetail->cart->updatetotal($itemdetail->cart, '-'.($itemdetail->harga - $itemdetail->diskon));
-            return back()->with('success', 'Item successfully updated');
+    
+        // If quantity is 0, delete the cart detail
+        if ($detail->qty <= 0) {
+            $detail->delete();
+        } else {
+            // Update subtotal and save if qty is greater than 0
+            $detail->subtotal = $detail->qty * $detail->price; // Assuming you have a price field
+            $detail->save();
         }
+    
+        return redirect()->back()->with('success', 'Cart updated successfully');
     }
 
     /**

@@ -193,14 +193,6 @@
     animation: slideRight 30s linear infinite;
 }
 
-@keyframes slideRight {
-    0% {
-        transform: translateX(-1000px);
-    }
-    100% {
-        transform: translateX(1000px);
-    }
-}
 }
 
 @media only screen and (max-width: 1056px) {

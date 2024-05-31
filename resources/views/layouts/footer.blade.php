@@ -2,7 +2,7 @@
 <footer class="text-center text-lg-start bg-transparant text-muted " style="margin-top:20px; margin-left=0px; margin-right=0px;">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-1 border-bottom" style="background-color: #007bff;color: white">
-    <div class="animated-text">TOP UP MURAH DAN TERCEPAT / BISA PAKAI QRIS / OPEN 24 JAM / MOBILE LEGENDS BANG BANG</div>
+    <div class="animated-text"></div>
 </section>
 
   <!-- Section: Social media -->
@@ -57,27 +57,22 @@
 <style>
 
 
-@keyframes slideIn {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
 
 .copyright{
     padding: 1px;
     background-color: #007bff;
 }
+
 .animated-text {
-    position: left;
-    margin-left: 50px;
-    top: 50%;
-    left: 10%;
-    transform: translateX(-50%);
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
     animation: slideIn 10s linear infinite;
 }
+
+
 
 
 

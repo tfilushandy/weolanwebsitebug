@@ -12,11 +12,11 @@
         <div class="card-body">
           <div style="display: flex; gap: 20px;">
             <div style="display: flex; flex-direction: column;">
-              <label for="uid">UID:</label>
-              <input type="text" id="uid" name="uid">
+              <label for="uid" style="color:black;">UID:</label>
+              <input type="text" id="uid" name="uid" style="color:black;">
             </div>
             <div style="display: flex; flex-direction: column;">
-              <label for="server">Server:</label>
+              <label for="server" style="color:black;">Server:</label>
               <input type="text" id="server" name="server">
             </div>
           </div>
@@ -67,8 +67,8 @@
           <form action="#" method="post">
             @csrf
             <div style="display: flex; flex-direction: column; gap: 10px;">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email">
+              <label for="email" style="color:black;">Email:</label>
+              <input type="email" id="email" name="email" style="color:black;">
               <button type="submit" class="btn btn-primary" style="background-color:white; color:black">Submit</button>
             </div>
           </form>
@@ -151,9 +151,9 @@
         <div class="col">
           <div class="card" style="border-color:linear-gradient(to right, #3354e7, slategray); box-shadow: 5px 6px 6px 2px #e9ecef;">
             <div class="card-header" style="border:none; background:linear-gradient(to right, #3354e7, slategray);">
-              <h5>Description</h5>
+              <h5 >Description</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="color:black">
               {{ $itemproduk->deskripsi_produk }}
             </div>
           </div>
@@ -200,9 +200,9 @@
     <div class="col">
       <div class="card" style="border-color:linear-gradient(to right, #3354e7, slategray); box-shadow: 5px 6px 6px 2px #e9ecef;">
         <div class="card-header" style="border:none; background:linear-gradient(to right, #3354e7, slategray);">
-          <h5>Display Comment</h5>
+          <h5 style="">Display Comment</h5>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="color:black;">
         @include('homepage.commentsDisplay', ['comments' => $itemproduk->comments, 'produk_id' => $itemproduk->id])
         </div>
       </div>
