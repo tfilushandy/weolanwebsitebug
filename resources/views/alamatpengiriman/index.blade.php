@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col col-12 mb-2">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header" style="background-color:#3399ff; color: white;">
           <div class="row">
-            <div class="col">
+            <div class="col" >
               Alamat Pengiriman
             </div>
             <div class="col-auto">
-              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger" style="background-color:#3399ff; color: white;">
+              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger" style="background-color:white; color: #3399ff;">
                 Tutup
               </a>
             </div>
@@ -31,22 +31,22 @@
               @foreach($itemalamatpengiriman as $pengiriman)
                 <tr>
         <td>
-          {{ $pengiriman->IDGAME }}
+          {{ $pengiriman->idgame }}
         </td>
         <td>
           {{ $pengiriman->no_tlp }}
         </td>
         <td>
-          {{ $pengiriman->EMAIL }}
+          {{ $pengiriman->email }}
         </td>
                   <td>
                     <form action="{{ route('alamatpengiriman.update',$pengiriman->id) }}" method="post">
                       @method('patch')
                       @csrf()
                       @if($pengiriman->status == 'utama')
-                      <button type="submit" class="btn btn-primary btn-sm" disabled>Set Utama</button>
+                      <button type="submit" class="btnsetutama btn-sm" style="background-color:#0099ff; color:white;" disabled>Utama</button>
                       @else
-                      <button type="submit" class="btn btn-primary btn-sm">Set Utama</button>
+                      <button type="submit" class="btnsetutama btn-sm" style="background-color:#0099ff; color:white;">Set Utama</button>
                       @endif
                     </form>
                   </td>
@@ -60,13 +60,13 @@
     </div>
     <div class="col col-8">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header" style="background-color:#3399ff; color: white";>
           Form Alamat Pengiriman
         </div>
         <div class="card-body">
           @if(count($errors) > 0)
           @foreach($errors->all() as $error)
-              <div class="alert alert-warning">{{ $error }}</div>
+              <div class="alert alert-warning" >{{ $error }}</div>
           @endforeach
           @endif
           @if ($message = Session::get('error'))
@@ -84,15 +84,15 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="IDGAME">ID GAME</label>
+                  <label for="IDGAME" style="color: black">ID GAME</label>
                   <input type="text" name="IDGAME" class="form-control" value={{old('IDGAME') }}>
                 </div>
                 <div class="form-group">
-                  <label for="no_telp">NO WA</label>
+                  <label for="no_telp" style="color: black">NO WA</label>
                   <input type="text" name="no_tlp" class="form-control" value={{old('no_tlp') }}>
                 </div>
                 <div class="form-group">
-                  <label for="EMAIL">EMAIL</label>
+                  <label for="EMAIL" style="color: black">EMAIL</label>
                   <input type="text" name="EMAIL" class="form-control" value={{old('EMAIL') }}>
                 </div>
               </div>

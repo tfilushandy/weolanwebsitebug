@@ -266,7 +266,7 @@
                 $imageSrc = 'images/pubgkat.png';
                 break;
               case 'CLASH OF CLAN MOBILE':
-                $imageSrc = 'images/cockat.png';
+                $imageSrc = 'images/cockat.jpg';
                 break;
               default:
                 $imageSrc = 'images/mlkat.png';

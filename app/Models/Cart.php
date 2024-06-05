@@ -31,8 +31,10 @@ class Cart extends Model
     }
 
     public function updatetotal($itemcart, $subtotal) {
-        $this->attributes['subtotal'] = $itemcart->subtotal + $subtotal;
-        $this->attributes['total'] = $itemcart->total + $subtotal;
-        self::save();
+        \Log::info("Updating total. Current subtotal: {$itemcart->subtotal}, Adding: {$subtotal}");
+        $this->subtotal = $itemcart->subtotal + $subtotal;
+        $this->total = $itemcart->total + $subtotal;
+        $this->save();
     }
+    
 }

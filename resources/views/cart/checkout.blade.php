@@ -21,7 +21,7 @@
       <div class="row mb-2">
         <div class="col-12 mb-2">
           <div class="card">
-            <div class="card-header">
+            <div class="card-header" style="color: black;">
               Item
             </div>
             <div class="card-body">
@@ -68,7 +68,7 @@
         </div>
         <div class="col-12">
           <div class="card">
-            <div class="card-header">Alamat Pengiriman</div>
+            <div class="card-header" style="color: black;">Alamat Pengiriman</div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-stripped">
@@ -84,10 +84,10 @@
                   @if($itemalamatpengiriman)
                     <tr>
                       <td>
-                        {{ $itemalamatpengiriman->EMAIL}}
+                        {{ $itemalamatpengiriman->email}}
                       </td>
                       <td>
-                        {{ $itemalamatpengiriman->IDGAME }}
+                        {{ $itemalamatpengiriman->idgame }}
                       </td>
                       <td>
                         {{ $itemalamatpengiriman->no_tlp }}
@@ -103,7 +103,7 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer">
+            <div class="card-footer" style="color: white;">
               <a href="{{ route('alamatpengiriman.index') }}" class="btn btn-sm btn-primary" style="background-color:#3399ff; color: white;">
                 Tambah Alamat
               </a>
@@ -114,7 +114,7 @@
     </div>
     <div class="col-4">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header" style="color: black;">
           Ringkasan
         </div>
         <div class="card-body">
@@ -167,10 +167,10 @@
           <div class="text-center">
             <img src="/images/QRTRY.png" alt="Payment QR Code" class="" style="max-width: 1000px;">
           </div>
-          <p>Nominal Total: <strong>{{ number_format($itemcart->total, 2) }}</strong></p>
+          <p style="color: black">Nominal Total: <strong>{{ number_format($itemcart->total, 2) }}</strong></p>
           <ul class="list-unstyled">
-            <li>Bank: Bank BCA</li>
-            <li style="position: relative;">
+            <li style="color: black">Bank: Bank BCA</li>
+            <li style="position: relative; color: black;">
               Nomor Rekening: <span id="accountNumber">1234567890</span>
               <button class="btn btn-primary copy-btn" onclick="copyAccountNumber()">
                 <img src="/images/COPY.png" alt="Copy" style="max-width: 20px;">
@@ -195,13 +195,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="thankYouMessageLabel">Terima Kasih!</h5>
+          <h5 class="modal-title" id="thankYouMessageLabel" style="color: black">Terima Kasih!</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="text-center mt-5">
+          <div class="text-center mt-5" style="color: black">
             <h4>Terima kasih sudah melakukan pembayaran, orderan mu segera kami proses mohon ditunggu.</h4>
             <p>Silakan klik "Siap" untuk melanjutkan.</p>
           </div>
@@ -212,6 +212,41 @@
       </div>
     </div>
   </div>
+
+
+  <div class="card mt-4" style="border-color:linear-gradient(to right, #3354e7, slategray); box-shadow: 5px 6px 6px 2px #e9ecef;">
+        <div class="card-header" style="border:none; background:linear-gradient(to right, #3354e7, slategray);">
+          <h5>Payment</h5>
+        </div>
+        <div class="card-body">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="GoPay" class="payment-radio" style="display:none">
+            <img src="/images/gopaylogo.jpg" alt="GoPay" class="payment-logo"> GoPay
+          </label>
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="Dana" class="payment-radio" style="display:none">
+            <img src="/images/danalogo.jpg" alt="Dana" class="payment-logo"> Dana
+          </label>
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="BCA" class="payment-radio" style="display:none">
+            <img src="/images/bca.png" alt="BCA" class="payment-logo"> BCA
+          </label>
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="OvO" class="payment-radio" style="display:none">
+            <img src="/images/ovologo.png" alt="OvO" class="payment-logo"> OvO
+          </label>
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="ShopeePay" class="payment-radio" style="display:none">
+            <img src="/images/shopeelogo.png" alt="ShopeePay" class="payment-logo"> ShopeePay
+          </label>
+          <label class="btn btn-primary payment-label" style="background-color:white; color:black">
+            <input type="radio" name="payment" value="Kredivo" class="payment-radio" style="display:none">
+            <img src="/images/kredivologo.jpg" alt="Kredivo" class="payment-logo"> Kredivo
+          </label>
+        </div>
+        </div>
+      </div>
 
   <form id="paymentForm" method="post" action="{{ route('produk.index') }}" style="display: none;">
     @csrf
@@ -254,5 +289,64 @@
       width: 20px; /* Menyesuaikan lebar tombol */
       height: 20px; /* Menyesuaikan tinggi tombol */
     }
+
+    .payment-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .payment-radio:checked + .payment-label {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .payment-logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Tambahkan di bagian CSS Anda */
+
+/* Untuk layar dengan lebar kurang dari atau sama dengan 768px (misalnya, layar ponsel) */
+@media (max-width: 768px) {
+  .col-lg-8 {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+  .col-lg-4 {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Untuk label pembayaran */
+.payment-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Untuk tombol pembayaran yang dipilih */
+.payment-radio:checked + .payment-label {
+  background-color: #3354e7;
+  color: white;
+}
+
+/* Untuk logo pembayaran */
+.payment-logo {
+  width: 20px;
+  height: 20px;
+}
   </style>
+
+  
 @endsection

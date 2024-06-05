@@ -37,7 +37,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($itemcart->detail as $detail)
+              @foreach($itemcart->detail as $detail)
                 <tr>
                   <td>{{ $no++ }}</td>
                   <td>
@@ -140,4 +140,33 @@
           });
       });
   });
+
+  
 </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.update-cart-form').on('submit', function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var url = form.attr('action');
+        var data = form.serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            success: function(response) {
+                location.reload(); // Refresh the page to see the updates
+            },
+            error: function(response) {
+                alert('An error occurred while updating the cart.');
+            }
+        });
+    });
+});
+</script>
+
+

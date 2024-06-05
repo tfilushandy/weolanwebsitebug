@@ -30,8 +30,14 @@
                                         </span>
                                         @enderror
                                     </div><br>
-                                    <input type="checkbox" id="rememberme" name="rememberme" value="rememberme">
-                                    <label for="rememberme" style="color:black"> Remember Me</label>
+                                    <div class="form-group">
+                                     <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
+                                    </div>
+                                    </div>
                                     <br>
                                     @if (Route::has('password.request'))
                                     <a class="btn-link" href="{{ route('password.request') }}" style="color:black;">

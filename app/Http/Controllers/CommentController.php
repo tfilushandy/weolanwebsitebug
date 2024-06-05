@@ -8,18 +8,19 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
-    public function store(Request $request)
-    {
-        $input = $request->all();
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'content' => 'required',
+        'rating' => 'required|integer|min:1|max:5',
+        'produk_id' => 'required|exists:produk,id'
+    ]);
 
-        $request->validate([
-            'body'=>'required',
-            'rating'=>'required'
-        ]);
+    $input = $request->all();
+    $input['user_id'] = auth()->user()->id;
 
-        $input['user_id'] = auth()->user()->id;
-        Comment::create($input);
+    Comment::create($input);
 
-        return back();
-    }
+    return back();
+}
 }

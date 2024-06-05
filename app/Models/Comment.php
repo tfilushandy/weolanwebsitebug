@@ -17,7 +17,7 @@ class Comment extends Model
         'user_id', 
         'produk_id', 
         'parent_id', 
-        'body',
+        'content',
         'rating',
     ];
     

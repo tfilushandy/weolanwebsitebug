@@ -103,6 +103,7 @@
       </div>
     </div>
 
+
     <!-- kategori produk -->
     <div class="card" style="padding: 20px;">
       <div class="bg-transparent">
@@ -118,20 +119,6 @@
     </div>
     <!-- end kategori produk -->
 
-    <form action="" class="" name="sortProducts" id="sortProducts">
-      <div class="toolbar-sorted">
-        <div class="select-box-wrapper">
-          <label for="sort-by" class="sr-only">Sort By</label>
-          <select name="sort" class="select-box" id="sort-by">
-            <option value="/product" selected="selected">Sort by: Latest Product</option>
-            <option value="price_low">Sort by: Lowest Price</option>
-            <option value="price_high">Sort by: Highest Price</option>
-            <option value="products_asc">Sort by: Name A-Z</option>
-            <option value="products_desc">Sort by: Name Z-A</option>
-          </select>
-        </div>
-      </div>
-    </form>
 
     <!-- produk Terbaru -->
     <div class="row mt-4" style="margin-top: 30px; margin-bottom: 30px;">
@@ -145,7 +132,7 @@
           <div style="height: 190px; max-width: 270px; display: flex; align-items: center; margin-left: auto; margin-right: auto;">
             <a href="{{ URL::to('product/'.$produk->slug_produk) }}">
               @if($produk->foto != null)
-                <img src="images/{{ $produk->foto }}" alt="{{ $produk->nama_produk }}" class="card-img-top" style="max-height: 190px; width: 100%;">
+                <img src="http://127.0.0.1:8000/images/{{ $produk->foto }}" alt="{{ $produk->nama_produk }}" class="card-img-top" style="max-height: 190px; width: 100%;">
               @else
                 <img src="/images/diamondml.jpg" alt="{{ $produk->nama_produk }}" class="card-img-top" style="max-height: 190px; width: 100%;">
               @endif
