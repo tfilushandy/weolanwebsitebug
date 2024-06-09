@@ -65,3 +65,11 @@ Route::get('/home', function() {
 
 Route::post('/payment/create', [PaymentController::class, 'createTransaction'])->name('payment.createTransaction');
 Route::post('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
+
+
+Route::patch('cartdetail/{id}', [CartDetailController::class, 'update'])->name('cartdetail.update');
+
+// In your routes/web.php file
+
+Route::post('/store/order', 'OrderController@storeOrder')->name('store.order');
+

@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col col-12 mb-2">
       <div class="card">
-        <div class="card-header" style="background-color:#3399ff; color: white;">
+        <div class="card-header" style="border:none; background:linear-gradient(to right, #3354e7, slategray);">
           <div class="row">
             <div class="col" >
-              Alamat Pengiriman
+            ID GAME SETTING
             </div>
             <div class="col-auto">
-              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger" style="background-color:white; color: #3399ff;">
+              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger" style="color:white; background-color: #3399ff; border: 0px;">
                 Tutup
               </a>
             </div>
@@ -44,9 +44,9 @@
                       @method('patch')
                       @csrf()
                       @if($pengiriman->status == 'utama')
-                      <button type="submit" class="btnsetutama btn-sm" style="background-color:#0099ff; color:white;" disabled>Utama</button>
+                      <button type="submit" class="btnsetutama btn-sm" style="background-color:#0099ff; color:white; border: 0px;" disabled>Utama</button>
                       @else
-                      <button type="submit" class="btnsetutama btn-sm" style="background-color:#0099ff; color:white;">Set Utama</button>
+                      <button type="submit" class="btnsetutama btn-sm" style="background-color:grey; color:white; border: 0px;">Set Utama</button>
                       @endif
                     </form>
                   </td>
@@ -58,10 +58,10 @@
         </div>
       </div>
     </div>
-    <div class="col col-8">
+    <div class="col col-12 mb-2">
       <div class="card">
-        <div class="card-header" style="background-color:#3399ff; color: white";>
-          Form Alamat Pengiriman
+        <div class="card-header" style="border:none; background:linear-gradient(to right, #3354e7, slategray);">
+        ADD NEW ID GAME
         </div>
         <div class="card-body">
           @if(count($errors) > 0)

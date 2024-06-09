@@ -11,7 +11,7 @@
           <a class="nav-link" href="/" style="color: white; animation: colorChange 15s infinite;">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{ URL::to('product') }}"  style="color: white; animation: colorChange 20s infinite;">Product</a>
+            <a class="nav-link" href="{{ URL::to('product') }}"  style="color: white; animation: colorChange 20s infinite;">Top Up</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{ URL::to('about') }}"  style="color: white; animation: colorChange 10s infinite;">About</a>

@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $table = 'order';
+    protected $table = 'order'; // Change to 'orders' if your table name is 'orders'
     protected $fillable = [
         'cart_id',
+        'email',
+        'idgame',
         'no_tlp',
+        'subtotal'
     ];
 
-    public function cart() {
-        return $this->belongsTo('App\Models\Cart', 'cart_id');
-    }
+    // Define relationships or other methods here
 }
+
